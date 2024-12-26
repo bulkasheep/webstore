@@ -1,0 +1,113 @@
+- const categories = [ { filename: `Phones`, title: `Телефоны` }, { filename: `Computers`, title: `Компьютеры` }, { filename: `Smart Watches`, title: `Смарт часы` },{ filename: `Cameras`, title: `Камеры` }, { filename: `Headphones`, title: `Наушники` }, { filename: `Gaming`, title: `Игровое` } ]
+
+- const banners = [ { filename: `playstation.png`, class: `wide white image_left`, title: `<b>Playstation 5</b>`, text: `Невероятно мощные центральные и графические процессоры, а также твердотельный накопитель со встроенным интерфейсом ввода-вывода позволят по-новому взглянуть на работу с PlayStation.`, button: false }, { filename: `airpods.png`, class: `gray image_left`, title: `Apple AirPods <b>Max</b>`, text: `Компьютерный звук. Послушайте, это мощно`, button: false }, { filename: `vision.png`, class: `darkgray image_left`, title: `Apple Vision <b>Pro</b>`, text: `Захватывающий способ насладиться развлечениями`, button: false }, { filename: `macbook.svg`, class: `big gray image_right`, title: `Macbook <b>Air</b>`, text: `В новом 15‑дюймовом MacBook Air с большим дисплеем Liquid Retina есть место для большего количества ваших любимых функций.`, button: true } ]
+
+- const products = [ { filename: `991501fab467b7b89b3d15a3022907d7`, title: `Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)` }, { filename: `1aabaacc323e5b7f20ae5cf40933393a`, title: `Blackmagic Pocket Cinema Camera 6k` }, { filename: `a785d83ac87bef6f733e89566466ab68`, title: `Apple Watch Series 9 GPS 41mm Starlight Aluminium Case` }, { filename: `2ca1bf1289d832ba8f3fd6f235c1283f`, title: `AirPods Max Silver` }, { filename: `06c6dd2cbcae636ea9344264570b9022`, title: `Samsung Galaxy Watch6 Classic 47mm Black` }, { filename: `a0ffcff215f824ce6b4ece364fd8757e`, title: `Galaxy Z Fold5 Unlocked | 256GB | Phantom Black` }, { filename: `c0c0ba87919da1b52c3f38a360bd53f5`, title: `Galaxy Buds FE Graphite` }, { filename: `f4f1449533f9f5a48db3baede928c3bc`, title: `Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021` } ]
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/reset.css")
+        link(rel="stylesheet", href="css/style.css")
+        title TechZone - Главная
+    body
+        header.header
+            a(href="")
+                img(src="icons/Header Logo.svg", alt="")
+            input.header_search.input_search(type="text", name="search", placeholder="Поиск")
+            button.header_burger
+            div.header_cart
+                img.header_cart_icon(src="icons/32px/Cart.svg", alt="")
+                span.header_cart_count 2
+            nav.header_subnav
+                a.header_subnav_button.button_fill.small(href="")
+                    | Корзина
+                each category in categories
+                    hr.header_subnav_devider
+                    a.header_subnav_category(href="")
+                        img.header_subnav_category_icon(src=`icons/24px/${category.filename}.svg`, alt="")
+                        span.header_subnav_category_title
+                            | !{category.title}
+        main.main
+            section.main_banner
+                section.main_banner_content
+                    hgroup.main_banner_content_titles
+                        h1.main_banner_content_title.top
+                            | Pro.Beyond.
+                        h1.main_banner_content_title.big
+                            | IPhone 14 #[b Pro]
+                    p.main_banner_text
+                        | Создан, чтобы сделать мир лучше. Для каждого
+                    a.main_banner_button.button_stroke(href="")
+                        | Купить сейчас
+                img.main_banner_image(src="images/iphones.png", alt="")
+            section.main_banners
+                each banner in banners
+                    section.banner(class= banner.class)
+                        img.banner_image(src=`images/${banner.filename}`, alt="")
+                        hgroup.banner_content
+                            h1.banner_content_title
+                                | !{banner.title}
+                            p.banner_content_text
+                                | !{banner.text}
+                            if banner.button
+                                a.banner_content_button.button_stroke.black(href="")
+                                    | Купить сейчас
+            section.main_nav
+                div.main_nav_top
+                    h1.main_nav_top_text
+                        | Ищите по категориям
+                    div.main_nav_top_arrows
+                        div.main_nav_top_arrow.right
+                            img.main_nav_top_arrow_icon(src="icons/32px/Arrow.svg", alt="")
+                        div.main_nav_top_arrow.left
+                            img.main_nav_top_arrow_icon(src="icons/32px/Arrow.svg", alt="")
+                nav.main_nav_categories
+                    each category in categories
+                        a.category_card(href="")
+                            img.category_card_icon(src=`icons/48px/${category.filename}.svg`, alt="")
+                            span.category_card_title
+                                | !{category.title}
+            section.main_products
+                ul.main_products_tags
+                    each tag in [ { title: "Новые поступления", selected: true}, { title: "Бестселлеры", selected: false }, { title: "Рекомендуемое", selected: false } ]
+                        li.tag(class= tag.selected ? "selected" : "")
+                            | !{tag.title}
+                section.main_products_cards
+                    each product in products
+                        article.product_card
+                            div.product_card_top
+                                img.product_card_like(src="icons/32px/Like.svg", alt="")
+                                img.product_card_image(src=`images/${product.filename}.png`, alt="")
+                                h1.product_card_title
+                                    | !{product.title}
+                            div.product_card_bottom
+                                p.product_card_price
+                                    | 19 990
+                                div.product_card_button.button_fill.small
+                                    | В корзину
+        footer.footer
+            section.footer_content
+                article.footer_content_info
+                    a(href="")
+                        img(src="icons/Footer Logo.svg", alt="")
+                    p.footer_content_info_desc 
+                        | Мы являемся некоммерческой организацией для создания ИПР сотрудникам компании SPIKS
+                nav.footer_content_nav
+                    each section in [ { title: "Сервисы", links: [ "Бонусная программа", "Подарочные карты", "Оплата" ] }, { title: "Документы", links: [ "Правила возврата", "Договор оферты" ] } ]
+                        section.footer_content_nav_section
+                            h1.footer_content_nav_section_title
+                                | !{section.title}
+                            ul.footer_content_nav_section_list
+                                each link in section.links 
+                                    li.footer_content_nav_section_list_item
+                                        a.footer_content_nav_section_link(href="")
+                                            | !{link}
+
+            ul.footer_socials
+                each social in [ "Twitter", "Facebook", "Tiktok", "Instagram" ]
+                    li.footer_social
+                        a.footer_social_link(href="")
+                            img.footer_social_icon(src=`icons/16px/${social}.svg`, alt="")
