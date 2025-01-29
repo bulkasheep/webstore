@@ -18,7 +18,7 @@ html(lang="ru")
                 img(src="icons/Header Logo.svg", alt="")
             input.header_search.input_search(type="text", name="search", placeholder="Поиск")
             button.header_burger
-            div.header_cart
+            button.header_cart
                 img.header_cart_icon(src="icons/32px/Cart.svg", alt="")
                 span.header_cart_count 2
             nav.header_subnav
@@ -86,6 +86,8 @@ html(lang="ru")
                             div.product_card_bottom
                                 p.product_card_price
                                     | 19 990
+                                    span.product_card_price_currency
+                                        | ₽
                                 div.product_card_button.button_fill.small
                                     | В корзину
         footer.footer

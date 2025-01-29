@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')*/
 
 $width: 1080px
 
@@ -298,8 +298,7 @@ body
             font-size: 24px
             line-height: 24px
             letter-spacing: 0.03em
-            &::after
-                content: " ₽"
+            &_currency
                 display: inline
                 color: #7D7D7D
 .footer
@@ -362,7 +361,7 @@ body
 // ПК
 @media ( min-width: 1280px )
     .header
-        padding: 16px 11.111111%
+        padding: 16px 11.11%
         &_burger
             opacity: 0%
         &_subnav
@@ -372,7 +371,7 @@ body
             flex-flow: row nowrap
             align-items: center
             justify-content: space-between
-            padding: 8px 11.111111%
+            padding: 8px 11.11%
             &_button
                 display: none
             &_devider
@@ -478,13 +477,13 @@ body
                 transform: translateX(-1%) scale(0.84)
         &_nav
             gap: 32px
-            padding: 80px 11.111111%
+            padding: 80px 11.11%
             &_categories
                 gap: 32px
             .category_card
                 gap: 8px
         &_products
-            padding: 56px 11.111111% 60px 11.111111%
+            padding: 56px 11.11% 60px 11.11%
             align-items: stretch
             &_tags
                 gap: 32px
@@ -512,7 +511,7 @@ body
     .footer
         background: #000000
         gap: 24px
-        padding: 104px 11.111111%
+        padding: 104px 11.11%
         &_content
             justify-content: space-between
             &_info
@@ -526,7 +525,7 @@ body
                 &_section
                     flex-flow: column nowrap
                     align-items: flex-start
-                    width: 295.5px
+                    width: 295px
 @media ( min-width: 1440px )
     .main_banner
         justify-content: center
@@ -569,7 +568,7 @@ body
             flex-direction: column
             align-items: center
             gap: 48px
-            padding: 88px 4.444444% 0 4.444444%
+            padding: 88px 4.44% 0 4.44%
             &_content
                 text-align: center
                 &, &_titles
@@ -593,7 +592,7 @@ body
             flex-direction: column
             align-items: center
             gap: 24px
-            padding: 40px 4.444444%
+            padding: 40px 4.44%
             &_content
                 align-items: center
                 gap: 8px
@@ -616,20 +615,20 @@ body
                 gap: 16px
         &_nav
             gap: 48px
-            padding: 64px 4.444444%
+            padding: 64px 4.44%
             &_categories
                 justify-content: space-between
                 gap: 16px
         &_products
-            padding: 56px 4.444444%
+            padding: 56px 4.44%
             &_tags
                 gap: 32px
                 .tag
                     font-size: 14px
             &_cards
-                grid-template-columns: repeat(auto-fit, minmax(163.5px, max-content))
+                grid-template-columns: repeat(auto-fit, minmax(163px, max-content))
         .product_card
-            width: 163.5px
+            width: 163px
             padding: 24px 12px
             gap: 16px
             &_top
